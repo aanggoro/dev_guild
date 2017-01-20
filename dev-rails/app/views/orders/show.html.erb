@@ -10,5 +10,14 @@
   <%= @order.customer.name %>
 </p>
 
+<p>
+  <strong>Order Items:</strong>
+  <ol>
+    <% @order.order_items.each do |order_item| %>
+      <li><%= order_item.product.name %>, Qty <%= order_item.qty %></li>
+    <% end %>
+  </ol>
+</p>
+
 <%= link_to 'Edit', edit_order_path(@order) %> |
 <%= link_to 'Back', orders_path %>
